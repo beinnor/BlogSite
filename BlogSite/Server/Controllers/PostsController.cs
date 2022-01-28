@@ -1,5 +1,6 @@
 ﻿using BlogSite.Server.Repository;
 using BlogSite.Shared.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ namespace BlogSite.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PostsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -20,6 +22,7 @@ namespace BlogSite.Server.Controllers
 
         // GET: api/<PostsController>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult> GetPosts()
         {
             var posts = await _unitOfWork.Posts.GetAll();
@@ -40,7 +43,7 @@ namespace BlogSite.Server.Controllers
             return Ok(post);
         }
 
-        // POST api/<PostsController>
+        // POST api/<PostsController>        
         [HttpPost]
         public async Task<ActionResult<Post>> PostMake(Post post)
         {
@@ -50,7 +53,7 @@ namespace BlogSite.Server.Controllers
             return CreatedAtAction("GetPost", new { id = post.Id }, post);
         }
 
-        // PUT api/<PostsController>/5
+        // PUT api/<PostsController>/5        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPost(int id, Post post)
         {
@@ -80,7 +83,7 @@ namespace BlogSite.Server.Controllers
             return NoContent();
         }
 
-        // DELETE api/<PostsController>/5
+        // DELETE api/<PostsController>/5        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePost(int id)
         {

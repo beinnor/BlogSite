@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogSite.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220127120957_Initial")]
-    partial class Initial
+    [Migration("20220127211950_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,7 @@ namespace BlogSite.Server.Migrations
                         {
                             Id = "007642bc-bbe1-4108-9ef6-875ad7d7cd2e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2440525d-6fd1-4663-827e-b515005b1b6d",
+                            ConcurrencyStamp = "f6720ba5-4013-404e-9436-9f7697e715e5",
                             Email = "admin@localhost.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -109,9 +109,9 @@ namespace BlogSite.Server.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMXAGVz82atUjl43NMQXixpfMUEm8E0qIG2JMssHkea0l/+thktCKSU7CnXn1AVGWQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEINxke2P3wwXVCEJI+gGTmchN8+klxMYPEhznOT4Ex+SYkv8KxskF3+GRglAxB77WQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2096d91f-2f48-4783-ac12-0830e54992dd",
+                            SecurityStamp = "984c0111-e507-444f-a458-0bc2f8a8782a",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

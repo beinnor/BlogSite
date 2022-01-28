@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogSite.Server.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -233,7 +233,7 @@ namespace BlogSite.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "007642bc-bbe1-4108-9ef6-875ad7d7cd2e", 0, "2440525d-6fd1-4663-827e-b515005b1b6d", "admin@localhost.com", false, "Admin", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAEAACcQAAAAEMXAGVz82atUjl43NMQXixpfMUEm8E0qIG2JMssHkea0l/+thktCKSU7CnXn1AVGWQ==", null, false, "2096d91f-2f48-4783-ac12-0830e54992dd", false, "admin" });
+                values: new object[] { "007642bc-bbe1-4108-9ef6-875ad7d7cd2e", 0, "f6720ba5-4013-404e-9436-9f7697e715e5", "admin@localhost.com", false, "Admin", "Admin", false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAEAACcQAAAAEINxke2P3wwXVCEJI+gGTmchN8+klxMYPEhznOT4Ex+SYkv8KxskF3+GRglAxB77WQ==", null, false, "984c0111-e507-444f-a458-0bc2f8a8782a", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Posts",

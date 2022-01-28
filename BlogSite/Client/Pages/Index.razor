@@ -1,7 +1,41 @@
 ﻿@page "/"
+@inject HttpClient _http
+@inject IJSRuntime js
+
+
 
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+@if (Posts == null)
+{
+    <div class="alert alert-info">Loading Models...</div>
+}
+else
+{
+
+    @foreach (var post in Posts)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@post.Title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@post.DateCreated.ToString()</h6>
+                <p class="card-text">@post.Content</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    }
+}
+
+
+@code {
+    private List<Post> Posts;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Posts = await _http.GetFromJsonAsync<List<Post>>("api/posts");
+    }
+
+}

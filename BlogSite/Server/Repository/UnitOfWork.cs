@@ -29,10 +29,10 @@ namespace BlogSite.Server.Repository
         public async Task Save(HttpContext httpContext)
         {
             var user = httpContext.User.Identity.Name;
-            //if (user == null)
-            //{
-            //    user = "unknown";
-            //}
+            if (user == null)
+            {
+                user = "unknown";
+            }
             var entries = _context.ChangeTracker.Entries()
                 .Where(q => q.State == EntityState.Modified ||
                             q.State == EntityState.Added);
@@ -44,6 +44,7 @@ namespace BlogSite.Server.Repository
                 {
                     ((BaseModel)entry.Entity).DateCreated = DateTime.Now;
                     ((BaseModel)entry.Entity).Owner = user;
+                    //((BaseModel)entry.Entity).Owner = "stringfromcode";
                 }
             }
 
